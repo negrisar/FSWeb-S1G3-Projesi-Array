@@ -40,11 +40,13 @@ Aşağıdakileri yapmak için aşağıdaki kopyalama işlevini kullanın:
 */
 
 
-function kopyala(/*kod buraya*/){
-  /*kod buraya*/
+function kopyala(dizi){
+  const result = [];
+  for(let i = 0; i<dizi.length; i++){
+    result [i]= dizi[i];
+  }
+  return result
 }
-
-
 /* Görev 2:
 Bir dizinin tam olarak 25 çeşit olduğunu onaylayın. İşleviniz şunları kabul etmelidir:
    1. parametre olarak bir dizi
@@ -56,8 +58,13 @@ Bir dizinin tam olarak 25 çeşit olduğunu onaylayın. İşleviniz şunları ka
 */
 
 
-function dizi25Cesitmi(/*kod buraya*/){
-  /*kod buraya*/
+function dizi25Cesitmi(dizi){
+if (dizi.length === 25){
+  return true
+}
+else {
+  return false
+}
 }
 
 
@@ -74,8 +81,10 @@ Aşağıdakileri yapmak için cesitEkle işlevini kullanın:
 */
 
 
-function cesitEkle(/*kod buraya*/){
-  /*kod buraya*/
+function cesitEkle(dizi,tatlı){
+  dizi.unshift (tatlı);
+  return dizi;
+
 }
 
 
@@ -92,8 +101,9 @@ Aşağıdakileri yapmak için sonCesitiKaldir işlevini kullanın:
 */
 
 
-function sonCesitiKaldir(/*kod buraya*/){
-  /*kod buraya*/
+function sonCesitiKaldir(tatlar){
+  tatlar.pop();
+  return tatlar
 }
 
 
@@ -108,8 +118,8 @@ Aşağıdakileri yapmak için aşağıdaki indekstekiCesitiGetir işlevini kulla
    Örneğin: indekstekiCesitiGetir(orijinalTatlar, 2) çalıştırılmasıyla, Kakule'in başarıyla eklendiği varsayarsak sonuç "Ceviz" olucaktır.
 */
 
-function indekstekiCesitiGetir(/*kod buraya*/){
-  /*kod buraya*/
+function indekstekiCesitiGetir(tatlar,sayi){
+return tatlar[sayi]
 }
 
 
@@ -128,8 +138,14 @@ Aşağıdakileri yapmak için ismeGoreCesitCikar işlevini kullanın:
   İPUCU: Bunun için .splice() kullanabilirsiniz.
 */
 
-function ismeGoreCesitCikar(/*kod buraya*/){
-  /*kod buraya*/
+function ismeGoreCesitCikar(tatlar, lezzetAdi){
+for (let i = 0; i < tatlar.length; i++) {
+   const element = tatlar[i];
+  if (element==lezzetAdi) {
+tatlar.splice (i,1);
+  }
+}
+return tatlar;
 }
 
 
@@ -154,8 +170,14 @@ Aşağıdakileri yapmak için ismeGoreFiltrele işlevini kullanın:
 */
 
 
-function ismeGoreFiltrele(/*kod buraya*/){
-  /*kod buraya*/
+function ismeGoreFiltrele(tatlar, FiltreAdi){
+  let yeniDizi = []
+  for (let i = 0; i < tatlar.length; i++){
+    if (tatlar[i].includes(FiltreAdi)) {
+      yeniDizi.push(tatlar[i])
+    }
+  }
+  return yeniDizi
 }
 
 
